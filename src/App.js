@@ -13,6 +13,7 @@ function App() {
           setPosts(response.data)
           console.log(response.data);
         })
+
     }
   }
 
@@ -31,14 +32,14 @@ function App() {
 
       {
         posts.map(e => {   
-          return(       
+          return e === "No results" ? <p key={e}>{e}</p> :(       
               <div className='card'>
                 <div className='card-header'>{e.LocationText}</div>
                     <ul>
-                      <li>State: {e.State ? e.State : "N/A"}</li>
-                      <li>Location: ({e.Lat ? e.Lat : "N/A"}, {e.Long ? e.Long : "N/A"})</li>
-                      <li>Population (estimated): {e.EstimatedPopulation ? e.EstimatedPopulation : "N/A"}</li>
-                      <li>Total Wages: {e.TotalWages ? e.TotalWages : "N/A"}</li>
+                      <li key ={e.State}>State: {e.State ? e.State : "N/A"}</li>
+                      <li key ={e.lat}>Location: ({e.Lat ? e.Lat : "N/A"}, {e.Long ? e.Long : "N/A"})</li>
+                      <li key ={e.EstimatedPopulation}>Population (estimated): {e.EstimatedPopulation ? e.EstimatedPopulation : "N/A"}</li>
+                      <li key ={e.TotalWages}>Total Wages: {e.TotalWages ? e.TotalWages : "N/A"}</li>
                     </ul>
               </div>
           )
