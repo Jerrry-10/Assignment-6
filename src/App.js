@@ -32,7 +32,7 @@ function App() {
 
       {
         posts.map(e => {   
-          return e === "No results" ? <p key={e}>{e}</p> :(       
+          return (       
               <div className='card'>
                 <div className='card-header'>{e.LocationText}</div>
                     <ul>
